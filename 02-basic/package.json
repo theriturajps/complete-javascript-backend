@@ -1,0 +1,26 @@
+{
+  "name": "complete-javascript-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theriturajps/complete-javascript-backend.git"
+  },
+  "keywords": [
+    "backend"
+  ],
+  "author": "theriturajps",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theriturajps/complete-javascript-backend/issues"
+  },
+  "homepage": "https://github.com/theriturajps/complete-javascript-backend#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}
