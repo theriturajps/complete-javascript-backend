@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Image Upload</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="upload-container">
+		<form method="post" , action="/uploadimage" enctype="multipart/form-data">
+			<div class="upload-area" id="dropZone">
+				<input type="file" id="fileInput" name="pngFileUpload" class="file-input" hidden>
+				<label for="fileInput" class="upload-label">
+					<svg class="upload-icon" viewBox="0 0 24 24">
+						<path
+							d="M19.35 10.04A7.49 7.49 0 0012 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 000 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z" />
+					</svg>
+					<span>Drag & Drop files or click to upload</span>
+				</label>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Upload">
+			</div>
+		</form>
+		<div class="upload-preview">
+			<% if (imageUrl) { %>
+				<h3>Image Uploaded Successfully</h3>
+				<img src="<%= imageUrl %>" alt="uploadedImage" />
+				<% } %>
+		</div>
+	</div>
+</body>
+
+</html>

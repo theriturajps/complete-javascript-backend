@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Compact Contact Form</title>
+	<link rel="preconnect" href="https://cdn.jsdelivr.net">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+
+<body>
+
+<form class="max-w-md mx-auto mt-4" action="/shorturl" method="POST">
+	<div class="w-full max-w-sm min-w-[200px]">
+		<div class="relative">
+			<input type="url" name="url" class="w-full bg-gray-900 placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 text-white rounded-md pl-3 pr-16 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Enter long URL" />
+			<button class="absolute right-1 top-1 rounded bg-slate-800 py-1 px-2.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none bg-yellow-500" type="submit">Short</button>
+		</div>
+		<br>
+		<span class="w-full bg-gray-700 text-slate-700 text-sm border border-slate-200 text-white rounded-md pl-2 pr-16 py-1 shadow-sm"><strong>Shortend URL - </strong></span>
+	</div>
+</form>
+
+</body>
+
+</html>
