@@ -7,40 +7,53 @@
 	<title>Register</title>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<style>
+		.fade-in {
+			animation: fadeIn 0.2s ease-out;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+	</style>
 </head>
 
-<body class="bg-black min-h-screen flex items-center justify-center p-3">
-	<div class="w-full max-w-xs bg-gray-800 rounded-lg shadow-xl p-5">
-		<div class="text-center mb-4">
-			<h2 class="text-xl font-semibold text-gray-100">Create Account</h2>
-		</div>
-		<form action="/api/v1/register" method="post" enctype="multipart/form-data" class="space-y-3">
-			<div class="relative flex items-center">
-				<i class="fas fa-user absolute left-3 text-gray-400 text-sm"></i>
-				<input type="text" name="fullname" placeholder="Full Name" required
-					class="w-full pl-9 pr-3 py-2 bg-gray-700 text-gray-100 rounded-md text-sm border-0 focus:ring-1 focus:ring-blue-500">
-			</div>
-			<div class="relative flex items-center">
-				<i class="fas fa-envelope absolute left-3 text-gray-400 text-sm"></i>
-				<input type="email" name="email" placeholder="Email" required
-					class="w-full pl-9 pr-3 py-2 bg-gray-700 text-gray-100 rounded-md text-sm border-0 focus:ring-1 focus:ring-blue-500">
-			</div>
-			<div class="relative flex items-center">
-				<i class="fas fa-lock absolute left-3 text-gray-400 text-sm"></i>
-				<input type="password" name="password" placeholder="Password" required
-					class="w-full pl-9 pr-3 py-2 bg-gray-700 text-gray-100 rounded-md text-sm border-0 focus:ring-1 focus:ring-blue-500">
-			</div>
-			<div class="relative">
+<body class="bg-gray-900 min-h-screen flex items-center justify-center p-2">
+	<div class="fade-in w-64">
+		<div class="bg-gray-800 rounded-lg shadow-lg p-4">
+			<h2 class="text-lg font-medium text-white text-center mb-3">Create Account</h2>
+			<form action="/api/v1/register" method="post" enctype="multipart/form-data" class="space-y-2">
+				<div class="relative">
+					<i class="fas fa-user absolute left-2 top-2 text-gray-400 text-xs"></i>
+					<input type="text" name="fullname" placeholder="Full Name" required
+						class="w-full pl-7 pr-2 py-1.5 bg-gray-700 text-gray-100 rounded text-sm focus:ring-1 focus:ring-blue-500">
+				</div>
+				<div class="relative">
+					<i class="fas fa-envelope absolute left-2 top-2 text-gray-400 text-xs"></i>
+					<input type="email" name="email" placeholder="Email" required
+						class="w-full pl-7 pr-2 py-1.5 bg-gray-700 text-gray-100 rounded text-sm focus:ring-1 focus:ring-blue-500">
+				</div>
+				<div class="relative">
+					<i class="fas fa-lock absolute left-2 top-2 text-gray-400 text-xs"></i>
+					<input type="password" name="password" placeholder="Password" required
+						class="w-full pl-7 pr-2 py-1.5 bg-gray-700 text-gray-100 rounded text-sm focus:ring-1 focus:ring-blue-500">
+				</div>
 				<input type="file" name="userprofilepic" accept="image/*"
-					class="w-full text-xs text-gray-300 file:mr-2 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:bg-gray-700 file:text-gray-200 hover:file:bg-gray-600"
-					required>
-			</div>
-			<button type="submit"
-				class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 text-sm">Register</button>
-		</form>
-		<p class="text-center text-xs text-gray-400 mt-4">
-			Have an account? <a href="/login" class="text-blue-400 hover:text-blue-300">Sign in</a>
-		</p>
+					class="w-full text-xs text-gray-300 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-xs file:bg-gray-700 file:text-gray-200">
+				<button type="submit" class="w-full bg-blue-500 text-white py-1.5 rounded hover:bg-blue-600 text-sm">
+					Register
+				</button>
+			</form>
+			<p class="text-center text-xs text-gray-400 mt-3">
+				Have an account? <a href="/login" class="text-blue-400 hover:text-blue-300">Sign in</a>
+			</p>
+		</div>
 	</div>
 </body>
 

@@ -7,30 +7,47 @@
 	<title>Dashboard</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<style>
+		.fade-in {
+			animation: fadeIn 0.2s ease-out;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+	</style>
 </head>
 
-<body class="bg-black min-h-screen flex items-center justify-center p-3">
-	<div class="w-full max-w-xs bg-gray-800 rounded-lg shadow-xl p-5">
-		<div class="text-center">
-			<div class="relative inline-block mb-3">
-				<img src="<%= imageUrl %>" alt="Profile" class="w-16 h-16 rounded-full object-cover ring-2 ring-gray-600">
-				<div class="absolute bottom-0 right-0 bg-blue-600 text-white p-1 rounded-full">
-					<i class="fas fa-user text-xs"></i>
+<body class="bg-gray-900 min-h-screen flex items-center justify-center p-2">
+	<div class="fade-in w-64">
+		<div class="bg-gray-800 rounded-lg shadow-lg p-4">
+			<div class="text-center">
+				<div class="relative inline-block mb-2">
+					<img src="<%= imageUrl %>" alt="Profile" class="w-12 h-12 rounded-full object-cover ring-2 ring-gray-600">
+					<div class="absolute bottom-0 right-0 bg-blue-500 text-white p-1 rounded-full">
+						<i class="fas fa-user text-xs"></i>
+					</div>
 				</div>
+				<h2 class="text-base font-medium text-white mb-1">
+					<%= fullname %>
+				</h2>
+				<p class="text-xs text-gray-400 mb-3">
+					<%= email %>
+				</p>
+				<form action="/logout" method="POST">
+					<button type="submit"
+						class="inline-flex items-center space-x-1 px-3 py-1.5 bg-red-500 text-white text-sm rounded hover:bg-red-600">
+						<i class="fas fa-sign-out-alt"></i>
+						<span>Logout</span>
+					</button>
+				</form>
 			</div>
-			<h2 class="text-lg font-semibold text-gray-100 mb-1">
-				<%= fullname %>
-			</h2>
-			<p class="text-sm text-gray-400 mb-4">
-				<%= email %>
-			</p>
-			<form action="/logout" method="POST">
-				<button type="submit"
-					class="inline-flex items-center justify-center space-x-2 px-4 py-2 bg-red-600 text-white text-sm rounded-md hover:bg-red-700">
-					<i class="fas fa-sign-out-alt"></i>
-					<span>Logout</span>
-				</button>
-			</form>
 		</div>
 	</div>
 </body>
